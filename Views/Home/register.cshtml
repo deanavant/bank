@@ -1,0 +1,38 @@
+@model bank.Models.RegisterViewModel
+
+<p>
+    <a asp-controller="Home" asp-action="Index" asp-route-example="/">Login</a>
+</p>
+
+<div id="regbox">
+    <h3>Registration</h3>
+    <form asp-controller="Home" asp-action="Register" method="post">
+        <p>
+            <label asp-for="First"></label>
+            <input asp-for="First"/>
+            <span asp-validation-for="First"></span>
+        </p>
+        <p>
+            <label asp-for="Last"></label>
+            <input asp-for="Last"/>
+            <span asp-validation-for="Last"></span>
+        </p>
+            <label asp-for="Email"></label>
+            <input asp-for="Email"/>
+            <span asp-validation-for="Email"></span>
+        </p>
+        <p>
+            <label asp-for="Password"></label>
+            <input asp-for="Password"/>
+            <span asp-validation-for="Password"></span>
+        </p>
+        <p>
+            <label asp-for="Pwc"></label>
+            <input asp-for="Pwc"/>
+            <span asp-validation-for="Pwc"></span>
+        </p>
+        <p>
+            <button id="reg" type="submit">Register</button>
+        </p>
+    </form>
+</div>

@@ -1,0 +1,6 @@
+@foreach (string result in ViewBag.results)
+    {
+        <tr>
+        @Html.Raw(@result);
+        </tr>
+    }

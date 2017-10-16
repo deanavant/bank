@@ -1,0 +1,34 @@
+@model bank.Models.TransactionViewModel
+
+<p>
+    <a asp-controller="Home" asp-action="Logout" asp-route-example="logout">Logout</a>
+</p>
+
+<header>
+    <h3>Welcome, @ViewBag.name</h3>
+    <label>Current Balance</label>
+    <input type="text" value="$@ViewBag.balance" readonly>
+</header>
+
+
+<form asp-controller="Home" asp-action="transact" method="post">
+    <p>
+        <label asp-for="Amount"></label>
+        <input asp-for="Amount">
+        <span asp-validation-for="Amount"></span>
+        <input type="submit" value="Submit">
+    </p>
+</form>
+
+<table>
+    <tr>
+        <th>Amount</th>
+        <th>Date</th>
+    </tr>
+    @foreach (string result in ViewBag.results)
+    {
+        <tr>
+        @Html.Raw(@result)
+        </tr>
+    }
+</table>

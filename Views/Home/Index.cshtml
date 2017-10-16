@@ -1,0 +1,27 @@
+@model bank.Models.LoginViewModel
+
+@{
+    ViewData["Title"] = "";
+}
+<p>
+    <a asp-controller="Home" asp-action="showReg" asp-route-example="showReg">Register</a>
+</p>
+
+<div id="loginbox">
+    <h3>Login</h3>
+    <form asp-controller="Home" asp-action="Login" method="post">
+        <p>
+            <label asp-for="Email"></label>
+            <input asp-for="Email"/>
+            <span asp-validation-for="Email"></span>
+        </p>
+        <p>
+            <label asp-for="Password"></label>
+            <input asp-for="Password"/>
+            <span asp-validation-for="Password"></span>
+        </p>
+        <p>
+            <button id="log" type="submit">Login</button>
+        </p>
+    </form>
+</div>
